@@ -182,7 +182,7 @@ void XPUConv2dCompute<TGEMM, TW, DX, DY, PType>::Run() {
   xdnn::Activation_t act((xdnn::Activation_t::act_enum)act_type);
   if (act_type == 5) {
     act.leaky_alpha = param.act_param.front();
-    CHECK(act.leaky_alpha >= 0.0001 && act.leaky_alpha <= 10);
+    //CHECK(act.leaky_alpha >= 0.0001 && act.leaky_alpha <= 10);
   } else if (act_type == 15) {
     act.hard_sigmoid_slope = param.act_param.front();
   }
